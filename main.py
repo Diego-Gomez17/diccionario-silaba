@@ -1,6 +1,8 @@
 import PyPDF2
 import os
 
+#extrae el texto del pdf
+
 pdfFileObj = open('./dic.pdf','rb')
 
 pdfReader = PyPDF2.PdfFileReader(pdfFileObj)
@@ -20,8 +22,6 @@ for x in range(3595,32055):
 file = open('./diccionario.txt','w')
 file.write(read)
 file.close
-
-#106 comienza el diccionario 9091 termina
 
 
 # with open(salida, "w") as archivo_salida:
