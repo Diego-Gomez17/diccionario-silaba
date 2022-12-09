@@ -22,8 +22,21 @@ for sila in silaba:
                 count= owo.split(" ",1)
                 result.append(count[0])
         print(secuencia)
-
-resultado= str(result)
-file = open('./result.txt','w')
-file.write(resultado)
-file.close
+contador=0
+for x in silaba:
+    for i in result:
+        if re.findall(('^{}\w').format(x),i):
+            contador=contador+1
+    if contador < 200:
+        dowo="hay ",contador," tantas palabras con: ",x, " tiene 5 Estrellas"
+    if contador >=200 and contador <= 800:
+        dowo="hay ",contador," tantas palabras con: ",x, " tiene 4 Estrellas"
+    if contador >=800 and contador <= 1000:
+        dowo="hay ",contador," tantas palabras con: ",x, " tiene 3 Estrellas"
+    if contador >=1000 and contador <= 3000:
+        dowo="hay ",contador," tantas palabras con: ",x, " tiene 2 Estrellas"
+    if contador > 3000:
+        dowo="hay ",contador," tantas palabras con: ",x, " tiene 1 Estrellas"
+    
+    print(dowo)
+    contador=0
